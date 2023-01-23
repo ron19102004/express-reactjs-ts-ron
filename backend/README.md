@@ -1,0 +1,18 @@
+# API Web Backend With Express + TypeScript
+- @get /users        -> find all users
+- @get /users/:id    -> find user
+- @get /users/page/:page_number     ->find users
+- @post /users  -> create
+- @delete /users    -> delete user
+- @get /categories  -> find all categories
+- @get /categories/:id  -> find categories
+- @post /categories -> create category
+- @delete /categories   -> delete category
+- @put /categories  -> update category
+- @get /size    -> find size
+- @post /size   -> create size
+- @delete /size -> delete size
+- @post /products   -> create product
+- @get /products    -> find all products
+- @get /products/:id -> find product
+- @get /products/category/:titleURL -> find product by category

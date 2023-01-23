@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ProductRoute = exports.SizeRoute = exports.CategoryRoute = exports.UserRoute = void 0;
+const size_route_1 = require("./size.route");
+Object.defineProperty(exports, "SizeRoute", { enumerable: true, get: function () { return size_route_1.SizeRoute; } });
+const category_route_1 = require("./category.route");
+Object.defineProperty(exports, "CategoryRoute", { enumerable: true, get: function () { return category_route_1.CategoryRoute; } });
+const user_route_1 = require("./user.route");
+Object.defineProperty(exports, "UserRoute", { enumerable: true, get: function () { return user_route_1.UserRoute; } });
+const product_route_1 = require("./product.route");
+Object.defineProperty(exports, "ProductRoute", { enumerable: true, get: function () { return product_route_1.ProductRoute; } });
