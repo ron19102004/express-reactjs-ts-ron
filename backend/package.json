@@ -12,14 +12,14 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/ron19102004/reactjs-express-ts-ron.git"
+      "url": "git+https://github.com/ron19102004/api-ex-reactjs-ts-ron.git"
     },
     "author": "ron",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/ron19102004/reactjs-express-ts-ron/issues"
+      "url": "https://github.com/ron19102004/api-ex-reactjs-ts-ron/issues"
     },
-    "homepage": "https://github.com/ron19102004/reactjs-express-ts-ron#readme",
+    "homepage": "https://github.com/ron19102004/api-ex-reactjs-ts-ron#readme",
     "dependencies": {
       "@types/body-parser": "^1.19.2",
       "@types/cors": "^2.8.13",

@@ -58,7 +58,7 @@ class App {
             //introduce my api
             this.app.get("/", (req, res) => {
                 res.send(`<a style = "color: blue; text-decoration: none;font-size:30px;font-weight:bold;"
-                href="https://github.com/ron19102004/ex-ts-ron/blob/master/README.md">
+                href="https://github.com/ron19102004/api-ex-reactjs-ts-ron/blob/master/backend/README.md">
                 Giới thiệu tại đây ⬇️</a>`);
             });
         };
