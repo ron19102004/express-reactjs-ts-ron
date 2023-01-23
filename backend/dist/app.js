@@ -46,7 +46,7 @@ class App {
         this.setUp = () => {
             this.app.use(bodyParser.urlencoded({ extended: true }));
             this.app.use(bodyParser.json());
-            new cors_config_1.CorsConfig(this.app);
+            this.corsConfig.config();
         };
         this.setRoute = () => {
             //@ts-ignore
@@ -71,6 +71,7 @@ class App {
             new database_config_1.DatabaseConfig();
         };
         this.app = (0, express_1.default)();
+        this.corsConfig = new cors_config_1.CorsConfig(this.app);
         this.port = parseInt(process.env.PORT || "3000") || 3000;
         this.init();
     }

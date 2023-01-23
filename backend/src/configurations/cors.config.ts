@@ -11,6 +11,6 @@ export class CorsConfig {
             credentials: true, //access-control-allow-credentials:true
             optionSuccessStatus: 200,
         };
-        this.app.use(cors(corsOptions));
+        this.app.use(cors(corsOptions));        
     };
 }

@@ -10,8 +10,10 @@ dotenv.config();
 export class App {
     private app:express.Application;
     private port:number;
+    private corsConfig:CorsConfig;
     constructor(){
         this.app = express();
+        this.corsConfig = new CorsConfig(this.app);
         this.port = parseInt(process.env.PORT || "3000") || 3000;
         this.init();
     }
@@ -24,7 +26,7 @@ export class App {
     private setUp = ():void => {
         this.app.use(bodyParser.urlencoded({ extended: true }));
         this.app.use(bodyParser.json());
-        new CorsConfig(this.app);
+        this.corsConfig.config();
     }
     private setRoute = ():void => {
         //@ts-ignore
