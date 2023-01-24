@@ -7,7 +7,6 @@ const getProduct = async ():Promise<any> =>{
             'Content-Type': 'application/x-www-form-urlencoded',
             'Access-Control-Allow-Origin': '*',
         },
-        mode:'no-cors'
     };
     return await axios(config)
         .then((data:any):any=>data.data)
