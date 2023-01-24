@@ -44,12 +44,12 @@ class AuthLoginService {
             if (!user)
                 return {
                     status: "error",
-                    message: "User not found"
+                    message: "User not found",
                 };
             if (user.password !== password)
                 return {
                     status: "error",
-                    message: "password is incorrect"
+                    message: "password is incorrect",
                 };
             let dataForAccessToken = {
                 //@ts-ignore
@@ -64,7 +64,7 @@ class AuthLoginService {
             process.env.ACCESS_TOKEN_SECRET, process.env.ACCESS_TOKEN_LIFE);
             if (!accessToken) {
                 return {
-                    message: "Generate access token is not successful.Try again!"
+                    message: "Generate access token is not successful.Try again!",
                 };
             }
             let refreshToken = yield this.authGenerateTokenService.generateToken(dataForAccessToken, 
@@ -82,9 +82,7 @@ class AuthLoginService {
                 jwt: {
                     payload: dataForAccessToken,
                     accessToken: accessToken,
-                    refreshToken: refreshToken,
                 },
-                user: user
             };
         });
         this.userService = new user_service_1.UserService();
