@@ -47,7 +47,7 @@ const Login: React.FC<Props> = (props): any => {
             });
         if (user) {
             props.setUser(user.id,user.name,user.email,user.password,user.role,user.avatar,user.accessToken);
-            navigate('/my-account');
+            navigate('/');
         }
     }
     let onFinishFailed = (errorInfo: any) => {

@@ -8,6 +8,7 @@
   },
   "proxy": "http://localhost:8081",
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
     "@chakra-ui/react": "^2.4.9",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",

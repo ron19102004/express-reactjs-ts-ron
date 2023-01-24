@@ -2,12 +2,10 @@
 import React from 'react';
 import '../styles/App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from '../auth/login.';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-import HomePage from '../components/homepage';
-import MenuBar from '../components/menubar';
-import MyAccount from '../components/myAccount';
-import { UserInterface } from '../components/myAccount';
+import { UserInterface } from '../components/profile';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {HomePage,Product,MenuBar,Login,Profile} from '../components/index';
 import { useState } from 'react';
 
 const colors = {
@@ -19,16 +17,7 @@ const colors = {
 };
 const theme = extendTheme({ colors: colors });
 const App: React.FC = (): any => {
-  const [acc,setAcc]=useState({});
-  let myAccount: UserInterface = {
-    id: 0,
-    name: "null",
-    email: "null",
-    role: "null",
-    avatar: "null",
-    accessToken: "null",
-    password: "null"
-  };
+  const [acc, setAcc] = useState({});
   const setAccount = (
     id: number,
     name: string,
@@ -37,38 +26,36 @@ const App: React.FC = (): any => {
     role: string,
     avatar: string,
     accessToken: string): void => {
-    myAccount.id = id;
-    myAccount.name = name;
-    myAccount.email = email;
-    myAccount.role = role;
-    myAccount.accessToken = accessToken;
-    myAccount.avatar = avatar;
-    myAccount.password = password;
+    let myAccount: UserInterface = {
+      id: id,
+      name: name,
+      email: email,
+      role: role,
+      avatar: avatar,
+      accessToken: accessToken,
+      password: password
+    };
     setAcc(myAccount);
   }
   return (
     <BrowserRouter>
       <ChakraProvider theme={theme}>
         <header>
-          <MenuBar />
+          <MenuBar/>
         </header>
         <main>
           <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path='/auth/login' element={
+            <Route path='/profile/login' element={
               <Login
                 setUser={setAccount}
               />
             } />
-            <Route path='/my-account' element={
-              <MyAccount
-                obj={acc}
-              />
-            } />
+            <Route path='/profile' element={<Profile obj={acc}/>} />
+            <Route path='/products' element={<Product/>}/>
           </Routes>
         </main>
         <footer>
-
         </footer>
       </ChakraProvider>
     </BrowserRouter>

@@ -11,17 +11,25 @@ export interface UserInterface{
     accessToken:string
     password:string
 }
-interface OwnsProps {
+export interface ObjectAny {
     obj:Object;
 }
-type Props = OwnsProps;
-const MyAccount:React.FC<Props> = (props):any=>{
+type Props = ObjectAny;
+const Profile:React.FC<Props> = (props):any=>{
     let obj = props.obj;
     let navigate = useNavigate();
+    useEffect(()=>{
+        if(Object.keys(obj).length === 0) {
+            setTimeout(()=>{
+                navigate("/profile/login");
+            },500)
+        }
+    },[obj])
     return(
         <>
+            <h1>Profile</h1>
             {console.log(obj)}
         </>
     )
 }
-export default MyAccount;
+export default Profile;
