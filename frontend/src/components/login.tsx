@@ -33,7 +33,7 @@ const Login: React.FC<Props> = (props): any => {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Accept': "application/json",
-                'Access-Control-Allow-Origin':'http://localhost:3000'
+                'Access-Control-Allow-Origin':'https://ronshomerelax.vercel.app/'
 
             },
             data: data
