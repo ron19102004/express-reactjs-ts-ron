@@ -3,7 +3,7 @@ import '../styles/login.scss';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
-interface OwnsProps  {
+interface OwnsProps {
     setUser: (
         id: number,
         name: string,
@@ -32,7 +32,9 @@ const Login: React.FC<Props> = (props): any => {
             url: `https://api-ex-reactjs-ts-ron.onrender.com/auth/login`,
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
-                'Accept': "application/json"
+                'Accept': "application/json",
+                'Access-Control-Allow-Origin': '*',
+
             },
             data: data
         };
@@ -40,13 +42,13 @@ const Login: React.FC<Props> = (props): any => {
         await axios(config)
             .then((data) => {
                 user = data && data.data && data.data.user;
-                console.log(user);
+                console.log(data);
             })
             .catch(function (error: Error) {
                 console.log(error);
             });
         if (user) {
-            props.setUser(user.id,user.name,user.email,user.password,user.role,user.avatar,user.accessToken);
+            props.setUser(user.id, user.name, user.email, user.password, user.role, user.avatar, user.accessToken);
             navigate('/');
         }
     }

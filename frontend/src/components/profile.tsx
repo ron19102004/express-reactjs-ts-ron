@@ -12,10 +12,11 @@ export interface UserInterface{
     password:string
 }
 export interface ObjectAny {
-    obj:Object;
+    obj:JSON;
 }
 type Props = ObjectAny;
 const Profile:React.FC<Props> = (props):any=>{
+    const [info,setInfo]= useState({});
     let obj = props.obj;
     let navigate = useNavigate();
     useEffect(()=>{
@@ -23,12 +24,11 @@ const Profile:React.FC<Props> = (props):any=>{
             setTimeout(()=>{
                 navigate("/profile/login");
             },500)
-        }
+        } else setInfo(obj);
     },[obj])
     return(
         <>
             <h1>Profile</h1>
-            {console.log(obj)}
         </>
     )
 }

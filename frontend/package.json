@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/ron19102004/api-ex-reactjs-ts-ron.git"
   },
-  "proxy": "http://localhost:8081",
+  "proxy": "https://api-ex-reactjs-ts-ron.onrender.com/",
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
     "@chakra-ui/react": "^2.4.9",

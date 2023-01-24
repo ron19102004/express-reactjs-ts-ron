@@ -57,9 +57,10 @@ export class AuthLoginService {
     return {
       message: "login successfully !!!.",
       jwt: {
-        payload: dataForAccessToken,
         accessToken: accessToken,
+        refreshToken: refreshToken
       },
+      user:user
     };
   };
 }

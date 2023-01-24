@@ -9,7 +9,7 @@ import {HomePage,Product,MenuBar,Login,Profile} from '../components/index';
 import { useState } from 'react';
 
 const App: React.FC = (): any => {
-  const [acc, setAcc] = useState({});
+  const [acc, setAcc] = useState(JSON);
   const setAccount = (
     id: number,
     name: string,
@@ -27,7 +27,10 @@ const App: React.FC = (): any => {
       accessToken: accessToken,
       password: password
     };
-    setAcc(myAccount);
+
+    let a = JSON.stringify(myAccount);
+    let r = JSON.parse(a);
+    setAcc(r);
   }
   return (
     <BrowserRouter>

@@ -4,8 +4,10 @@ const getProduct = async ():Promise<any> =>{
         method: 'get',
         url: 'https://api-ex-reactjs-ts-ron.onrender.com/products',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Access-Control-Allow-Origin': '*',
         },
+        mode:'no-cors'
     };
     return await axios(config)
         .then((data:any):any=>data.data)
