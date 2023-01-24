@@ -5,7 +5,7 @@ const getProduct = async ():Promise<any> =>{
         url: 'https://api-ex-reactjs-ts-ron.onrender.com/products',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Origin':'http://localhost:3000'
         },
     };
     return await axios(config)

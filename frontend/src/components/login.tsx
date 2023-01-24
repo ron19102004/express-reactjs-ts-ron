@@ -33,7 +33,7 @@ const Login: React.FC<Props> = (props): any => {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Accept': "application/json",
-                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Origin':'http://localhost:3000'
 
             },
             data: data
